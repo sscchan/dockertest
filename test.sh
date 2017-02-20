@@ -6,6 +6,6 @@ docker-compose down
 # Rebuild the docker-composed containers
 docker-compose up --build -d
 
-# Run Test
+# Run Tests
 docker-compose run web npm test
 docker-compose run runservice npm test 
