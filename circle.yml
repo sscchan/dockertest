@@ -8,3 +8,10 @@ machine:
   services:
     - docker
 
+test:
+  pre:
+    - bash start.sh
+
+  override:
+    - docker-compose run web npm test
+    - docker-compose run runservice npm test 
