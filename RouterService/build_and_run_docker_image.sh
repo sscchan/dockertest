@@ -17,6 +17,9 @@ sleep 11
 # Remove any "exited" docker containers
 docker rm -v $(docker ps -a -q -f status=exited)
 
+# Clean up any left over images
+docker rmi $(docker images -a | grep "^<none>" | awk '{print $3}')
+
 # Remove old version of the docker image
 docker rmi $DOCKER_IMAGE_NAME
 
